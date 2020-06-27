@@ -1,10 +1,12 @@
 from setuptools import setup, find_packages
 
+
 def read(filename):
     return [
         req.strip()
         for req
-        in open(filename).readlines()]
+        in open(filename).readlines()
+    ]
 
 
 setup(
@@ -14,7 +16,7 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     install_requires=read("requirements.txt"),
-    extra_require={
+    extras_require={
         "dev": read("requirements-dev.txt")
-        }
+    }
 )
