@@ -1,9 +1,10 @@
+import click
 from delivery.ext.db import db
-# from delivery.ext.site import models
-from flask import click
+from delivery.ext.site import models
 
 
 def init_app(app):
+
     @app.cli.command()
     def create_db():
         """Este comando inicializa o db"""
@@ -12,9 +13,9 @@ def init_app(app):
     @app.cli.command()
     @click.option("--email", "-e")
     @click.option("--passwd", "-p")
-    @click.option("--admin", "-a", is_Flag=True, default=False)
-    def add_user():
-        """Adiciona novo usuário"""
+    @click.option("--admin", "-a", is_flag=True, default=False)
+    def add_user(email, passwd, admin):
+        """adiciona novo usuario"""
         user = models.User(
             email=email,
             passwd=passwd,
@@ -27,4 +28,9 @@ def init_app(app):
 
     @app.cli.command()
     def listar_pedidos():
-        return True
+        # TODO: usar tabulate
+        click.echo("lista de pedidos")
+
+    @app.cli.command()
+    def listar_usuarios():
+        click.echo("lista de usuarios")
