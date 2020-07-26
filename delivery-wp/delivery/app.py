@@ -1,13 +1,6 @@
 from flask import Flask
-from delivery.ext import site
-from delivery.ext import config
-from delivery.ext import toolbar
-from delivery.ext import db
-from delivery.ext import migrate
-from delivery.ext import cli
-from delivery.ext import hooks
-from delivery.ext import auth
-from delivery.ext import admin
+
+from delivery.ext import admin, auth, cli, config, db, hooks, site, toolbar
 
 
 def create_app():
@@ -16,7 +9,6 @@ def create_app():
     db.init_app(app)
     auth.init_app(app)
     admin.init_app(app)
-    migrate.init_app(app)
     cli.init_app(app)
     toolbar.init_app(app)
     site.init_app(app)

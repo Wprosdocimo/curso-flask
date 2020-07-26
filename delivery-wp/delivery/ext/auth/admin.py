@@ -45,4 +45,4 @@ class UserAdmin(ModelView):
         for user in users:
             user.admin = not user.admin
         db.session.commit()
-        flash(f"{len(users)} Usuários alterados com sucesso!!", "success")
+        flash(f"{users.count()} Usuários alterados com sucesso!!", "success")

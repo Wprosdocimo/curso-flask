@@ -1,3 +1,5 @@
+# TODO: Usar Dynaconf aqui
+
 
 def init_app(app):
     app.config["SECRET_KEY"] = "wprosdocimo"

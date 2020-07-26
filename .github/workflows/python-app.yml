@@ -31,7 +31,6 @@ jobs:
       run: |
         make init_db
         
-        
     - name: Test with pytest
       run: |
         make test
