@@ -6,10 +6,9 @@ from delivery.ext.db import db
 
 
 def init_app(app):
-    """TODO: Inicializar Flask Simple Login + JWT"""
+    """TODO: inicializar Flask Simple Login + JWT"""
 
     app.cli.command()(list_users)
     app.cli.command()(add_user)
 
     base_admin.add_view(UserAdmin(User, db.session))
-    

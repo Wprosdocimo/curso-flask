@@ -1,11 +1,13 @@
-from flask import render_template
-from flask import Blueprint
+from flask import Blueprint, render_template, current_app
+
 
 bp = Blueprint("site", __name__)
 
 @bp.route("/")
 def index():
-    return render_template("index.html")
+    site_name = "Eita Loco"
+    current_app.logger.debug("Entrei na função main")
+    return render_template("index.html", site_name=site_name)
 
 @bp.route("/sobre")
 def about():
