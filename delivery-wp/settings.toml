@@ -1,7 +1,7 @@
-
+[default]
 DEBUG = false
 FLASK_ADMIN_SWATCH = 'flatly'
-ADMIN_NAME = 'WP-Foods Admin'
+ADMIN_NAME = 'WP Foods - Admin'
 EXTENSIONS = [
     "delivery.ext.db:init_app",
     "delivery.ext.auth:init_app",
@@ -18,9 +18,15 @@ SQLALCHEMY_TRACK_MODIFICATIONS = false
 DEBUG_TB_TEMPLATE_EDITOR_ENABLED = true
 DEBUG_TB_PROFILER_ENABLED = true
 DEBUG_TB_INTERCEPT_REDIRECTS = false
+ADMIN_NAME = "WP Foods (dev mode)"
 EXTENSIONS = [
-    "dynaconf_merge",
-    "delivery.ext.toolbar:init_app"
+    "delivery.ext.db:init_app",
+    "delivery.ext.auth:init_app",
+    "delivery.ext.admin:init_app",
+    "delivery.ext.cli:init_app",
+    "delivery.ext.toolbar:init_app",
+    "delivery.ext.site:init_app",
+    "delivery.ext.hooks:init_app",
 ]
 
 [production]
