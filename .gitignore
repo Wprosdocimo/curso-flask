@@ -132,6 +132,6 @@ dmypy.json
 .idea
 
 # db
-/delivery-wp/delivery/delibery.db
+/delivery-wp/delivery/delivery.db
 
 /delivery-wp/.secrets.*
