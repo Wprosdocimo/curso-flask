@@ -1,4 +1,3 @@
-# TODO: Usar Dynaconf aqui
 from dynaconf import FlaskDynaconf
 
 
